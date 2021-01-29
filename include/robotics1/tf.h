@@ -36,6 +36,10 @@ class robot_arm
             this->br.sendTransform(init_link("link0"));
             this->br.sendTransform(init_link("link1"));
             this->br.sendTransform(init_link("link2"));
+            this->br.sendTransform(init_link("link3"));
+            this->br.sendTransform(init_link("link4"));
+            this->br.sendTransform(init_link("link5"));
+            this->br.sendTransform(init_link("link6"));
 
         }
 
@@ -50,14 +54,14 @@ class robot_arm
 
             this->n.getParam("links/"+ link_name +"/name",temp.child_frame_id);
 
-            double alpha, a, r, d;
+            double alpha, th, a, d;
 
             this->n.getParam("links/" + link_name + "/alpha", alpha);
+            this->n.getParam("links/" + link_name + "/th", th);
             this->n.getParam("links/" + link_name + "/a", a);
-            this->n.getParam("links/" + link_name + "/r", r);
             this->n.getParam("links/" + link_name + "/d", d);
 
-            temp.transform = dh_to_transform(alpha,a,r,d);
+            temp.transform = dh_to_transform(alpha,th,a,d);
 
             return temp;
         }

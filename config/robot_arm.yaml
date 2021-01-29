@@ -1,6 +1,6 @@
 ---
 
-number_of_links: 3
+number_of_links: 7
 
 links:
 
@@ -9,9 +9,9 @@ links:
         name: "Trunk"
         parent: "world"
         alpha: 0 
-        a: 0
-        r: 1
+        th: 0
         d: 0
+        a: 1
         type: "fixed"
 
     link1:
@@ -19,9 +19,9 @@ links:
         name: "Shoulder"
         parent: "Trunk"
         alpha: -1.571
-        a: 0
-        r: 0
-        d: 1
+        th: -1.571
+        d: 0.335
+        a: 0.075
         type: "revolute"
 
     link2:
@@ -29,9 +29,49 @@ links:
         name: "UpperArm"
         parent: "Shoulder"
         alpha: 0
+        th: -1.571
+        d: 0
+        a: 0.270
+        type: "revolute"
+
+    link3:
+
+        name: "ForeArm"
+        parent: "UpperArm"
+        alpha: 1.571
+        th: 0
+        d: 0
+        a: 0.090
+        type: "revolute"
+
+    link4: 
+
+        name: "Wrist1"
+        parent: "ForeArm"
+        alpha: -1.571
+        th: 0
+        d: -0.295
         a: 0
-        r: 0.149
-        d: 0.432
+        type: "revolute"
+
+    link5:
+
+        name: "Wrist2"
+        parent: "Wrist1"
+        alpha: 1.571
+        th: 0
+        d: 0
+        a: 0
+        type: "revolute"
+
+    link6:
+
+        name: "Wrist3"
+        parent: "Wrist2"
+        alpha: 3.14
+        th: 0
+        d: -0.80
+        a: 0
         type: "revolute"
 
 ...
