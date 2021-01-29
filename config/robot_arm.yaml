@@ -1,0 +1,38 @@
+---
+
+number_of_links: 3
+
+links:
+
+    link0:
+
+        name: "Trunk"
+        parent: "world"
+        alpha: 0 
+        a: 0
+        r: 1
+        d: 0
+        type: "fixed"
+
+    link1:
+
+        name: "Shoulder"
+        parent: "Trunk"
+        alpha: -1.571
+        a: 0
+        r: 0
+        d: 1
+        type: "revolute"
+
+    link2:
+
+        name: "UpperArm"
+        parent: "Shoulder"
+        alpha: 0
+        a: 0
+        r: 0.149
+        d: 0.432
+        type: "revolute"
+
+...
+

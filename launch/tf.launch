@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robotics)/rviz/config.rviz"/>
+
+  <rosparam file="$(find robotics)/config/robot_arm.yaml" command="load"/>
+
+  <node pkg="robotics" type="tf_broadcaster" name="tf"/>
+
+  <node pkg="robotics" type="params.py" name="update_params"/>
+
+</launch>
