@@ -2,12 +2,12 @@
 
 <launch>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robotics)/rviz/config.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robotics1)/rviz/config.rviz"/>
 
-  <rosparam file="$(find robotics)/config/robot_arm.yaml" command="load"/>
+  <rosparam file="$(find robotics1)/config/robot_arm.yaml" command="load"/>
 
-  <node pkg="robotics" type="tf_broadcaster" name="tf"/>
+  <node pkg="robotics1" type="tf_broadcaster" name="tf"/>
 
-  <node pkg="robotics" type="params.py" name="update_params"/>
+  <node pkg="robotics1" type="params.py" name="update_params"/>
 
 </launch>

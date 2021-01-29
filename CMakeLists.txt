@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(robotics)
+project(robotics1)
 
 find_package(catkin REQUIRED roscpp rospy rviz tf2 tf2_ros geometry_msgs rosparam)
 
