@@ -12,3 +12,6 @@ include_directories(include)
 add_executable(tf_broadcaster src/tf.cpp)
 target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
 
+add_executable(random src/tree.cpp)
+target_link_libraries(random ${catkin_LIBRARIES})
+
