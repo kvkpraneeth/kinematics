@@ -9,9 +9,9 @@ catkin_package()
 include_directories(${catkin_INCLUDE_DIRS})
 include_directories(include)
 
-add_executable(tf_broadcaster src/tf.cpp)
-target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
+add_library(tf_broadcaster_core src/tf.cpp)
+target_link_libraries(tf_broadcaster_core ${catkin_LIBRARIES})
 
-add_executable(random src/tree.cpp)
-target_link_libraries(random ${catkin_LIBRARIES})
-
+add_executable(tf_broadcaster src/main.cpp)
+target_link_libraries(tf_broadcaster ${catkin_LIBRARIES} tf_broadcaster_core)
+add_dependencies(tf_broadcaster tf_broadcaster_core)
